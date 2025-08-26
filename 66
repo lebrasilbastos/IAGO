@@ -5,7 +5,6 @@ int main() {
     int i, j;
     int maior;
 
-    // Leitura da matriz 3x3
     printf("Digite os elementos da matriz 3x3:\n");
     for(i = 0; i < 3; i++) {
         for(j = 0; j < 3; j++) {
@@ -13,11 +12,8 @@ int main() {
             scanf("%d", &matriz[i][j]);
         }
     }
-
-    // Inicializa 'maior' com o primeiro elemento
     maior = matriz[0][0];
 
-    // Procura o maior valor
     for(i = 0; i < 3; i++) {
         for(j = 0; j < 3; j++) {
             if(matriz[i][j] > maior) {
@@ -26,7 +22,6 @@ int main() {
         }
     }
 
-    // Mostra o maior valor
     printf("\nO maior valor da matriz é: %d\n", maior);
 
     return 0;
