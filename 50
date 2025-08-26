@@ -1,0 +1,27 @@
+50º)
+
+#include <stdio.h> // Precisa pra gente usar o printf (imprimir) e o scanf (guardar valor)
+
+int main() {
+    float comprimento; // Pra guardar o comprimento do terreno (pode ter vírgula)
+    float largura;     // Pra guardar a largura do terreno (pode ter vírgula)
+    float area;        // Onde vamos guardar o resultado da área
+
+    // 1. Perguntando as medidas do terreno
+    printf("--- Calculadora de Area de Terreno ---\n");
+    printf("Qual o COMPRIMENTO do terreno em metros? (Ex: 15.5): ");
+    scanf("%f", &comprimento); // O '%f' é pra ler um número com vírgula (float)
+
+    printf("Qual a LARGURA do terreno em metros? (Ex: 8.2): ");
+    scanf("%f", &largura); // De novo, '%f' para números com vírgula
+
+    // 2. Calculando a área (comprimento vezes largura!)
+    area = comprimento * largura;
+
+    // 3. Mostrando o resultado para o usuário
+    // O "%.2f" faz o número aparecer com só 2 casas depois da vírgula, fica mais bonito!
+    printf("\nO terreno tem %.2f metros de comprimento e %.2f metros de largura.\n", comprimento, largura);
+    printf("A AREA TOTAL do terreno eh: %.2f metros quadrados.\n", area);
+
+    return 0; // Missão cumprida! O programa rodou direitinho.
+}
