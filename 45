@@ -1,0 +1,61 @@
+45º) 
+
+#include <stdio.h> // Aqui a gente "chama" a biblioteca pra poder conversar com o usuário (printf e scanf)
+#include <string.h> // Pra lidar com texto (strings), especialmente para pegar a operação
+
+int main() {
+    char operacao_escolhida[5]; // Uma "caixinha" temporária pra guardar o símbolo da operação (+, -, * ou /)
+    char simbolo_operacao;      // Onde vamos guardar o símbolo da operação que o usuário digitou
+    float numero1, numero2;   // Nossos dois números, que podem ter vírgula (reais)
+    float resultado_final;    // Onde vai aparecer o resultado da conta
+
+    // 1. Perguntando qual operação o usuário quer fazer
+    printf("Qual operacao voce quer? (+, -, * ou /): ");
+    // Usamos fgets para ler a linha toda e evitar problemas com o "Enter" que fica no buffer.
+    // Isso eh o que faz funcionar bem no Programiz C!
+    fgets(operacao_escolhida, sizeof(operacao_escolhida), stdin);
+    // Pegamos só o primeiro caractere que o usuário digitou, que é o símbolo da operação
+    simbolo_operacao = operacao_escolhida[0];
+
+    // 2. Pedindo os dois números para a conta
+    printf("Digite o primeiro numero: ");
+    scanf("%f", &numero1); // %f é para números com vírgula (float)
+
+    printf("Digite o segundo numero: ");
+    scanf("%f", &numero2);
+
+    // 3. Agora, vamos decidir qual conta fazer usando o "switch"
+    // O 'switch' é como um "cardápio" de opções que o programa pode seguir.
+    switch (simbolo_operacao) {
+        case '+': // Se o símbolo for '+' (soma)...
+            resultado_final = numero1 + numero2;
+            printf("\nO resultado da soma eh: %.2f\n", resultado_final);
+            break; // O 'break' serve pra sair do switch depois de fazer a conta
+
+        case '-': // Se o símbolo for '-' (subtracao)...
+            resultado_final = numero1 - numero2;
+            printf("\nO resultado da subtracao eh: %.2f\n", resultado_final);
+            break;
+
+        case '': // Se o símbolo for '' (multiplicacao)...
+            resultado_final = numero1 * numero2;
+            printf("\nO resultado da multiplicacao eh: %.2f\n", resultado_final);
+            break;
+
+        case '/': // Se o símbolo for '/' (divisao)...
+            // ATENCAO! Nao podemos dividir por zero!
+            if (numero2 != 0) { // Se o segundo numero NAO for zero...
+                resultado_final = numero1 / numero2;
+                printf("\nO resultado da divisao eh: %.2f\n", resultado_final);
+            } else { // Se o segundo numero FOR zero...
+                printf("\nOps! Nao da pra dividir por zero. Tente outros numeros.\n");
+            }
+            break;
+
+        default: // Se o usuário digitou um símbolo que a gente nao conhece...
+            printf("\nEssa operacao nao existe. Use apenas +, -, * ou /.\n");
+            break;
+    }
+
+    return 0; // O programa terminou com sucesso!
+}
