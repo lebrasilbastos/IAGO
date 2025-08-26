@@ -1,0 +1,51 @@
+44º)
+
+#include <stdio.h> // Pra gente conversar com o usuário
+
+int main() {
+    float num1, num2, num3; // Nossos três números que podem ter vírgula
+
+    // Pedindo os números pro usuário, um por um
+    printf("Me diz o primeiro numero (tipo 3.14): ");
+    scanf("%f", &num1);
+
+    printf("Agora o segundo (tipo 1.5): ");
+    scanf("%f", &num2);
+
+    printf("E por ultimo, o terceiro (tipo 2.7): ");
+    scanf("%f", &num3);
+
+    // Agora a magia acontece: vamos descobrir a ordem!
+    // A forma mais simples é ordenar "na mão" e imprimir
+    // Imagina que a gente vai colocar eles numa fila: menor, do meio, maior.
+    // Usamos o if pra ir trocando a posição se precisar.
+
+    float temp; // Uma caixinha temporária pra guardar valores quando trocamos
+
+    // Garantir que num1 seja o menor ou que esteja em ordem crescente
+    if (num1 > num2) {
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }
+    // Agora num1 é <= num2. Vamos garantir que num1 seja o menor de todos.
+    if (num1 > num3) {
+        temp = num1;
+        num1 = num3;
+        num3 = temp;
+    }
+    // Agora num1 é definitivamente o menor. Só falta arrumar num2 e num3.
+    if (num2 > num3) {
+        temp = num2;
+        num2 = num3;
+        num3 = temp;
+    }
+
+    // Pronto! Agora eles estão na ordem: num1 (menor), num2 (intermediário), num3 (maior)
+    printf("\n--- Olha So! ---\n");
+    printf("O menor numero eh: %.2f\n", num1);
+    printf("O numero do meio eh: %.2f\n", num2);
+    printf("O maior numero eh: %.2f\n", num3);
+
+    return 0; // Missao cumprida!
+}
