@@ -1,4 +1,3 @@
-34. Pedir nome, endereço, número e idade, dps mostrar tudo numa frase.
 #include <stdio.h>
 #include <string.h>
 
