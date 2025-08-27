@@ -1,4 +1,3 @@
-7. Ver o maior número entre 3 valores
 #include <stdio.h>
 
 int main() {
