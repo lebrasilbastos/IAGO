@@ -1,5 +1,3 @@
-25. Pergunte um valor em graus Fahrenheit e imprima em graus Celsius.
-
 #include <stdio.h>
 #include <math.h>
 
